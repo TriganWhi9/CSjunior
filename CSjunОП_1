@@ -1,0 +1,15 @@
+[StartCode]
+            byte age = 23; 
+            ushort hours = 10000;
+            int variable1 = -5;
+            int variable2 = 50;
+            uint positiveConstant = 10;
+            long worldPopulation = 7794798739;
+            ulong thoriumHalfLife = 45937439999999976;
+            float accelerationOfGravity = 9.80665f;
+            double constantPi = 3.141592653589793;
+            char questionMark = '?';
+            string name = "Иван";
+            string surname = "Грозный";
+            bool lightsOn = true;
+[EndCode]
