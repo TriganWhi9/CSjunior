@@ -1,0 +1,10 @@
+[StartCode]
+            int pichersInRow = 3;
+            int pichersInAlbum = 52;
+            int fullyFilledRows = pichersInAlbum / pichersInRow;
+            int extraPictures = pichersInAlbum % pichersInRow;
+
+            Console.WriteLine("Можно вывести " + fullyFilledRows
+                + " полностью заполненных рядов.");
+            Console.WriteLine("Колличество лишних картинок: " + extraPictures);
+[EndCode]
