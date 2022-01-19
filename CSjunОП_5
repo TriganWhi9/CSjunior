@@ -1,0 +1,24 @@
+[StartCode]
+            int peoplesCount;
+            int waitingTimeConstant = 10;
+            int fullWaitingTime;
+            int countOfHours;
+            int countOfMinutes;
+            bool MoreThenHour;
+            bool LessThenHour;
+
+            Console.Write("Сколько людей в очереди: ");
+            peoplesCount = Convert.ToInt32(Console.ReadLine());
+
+            fullWaitingTime = waitingTimeConstant * peoplesCount;
+
+            MoreThenHour = fullWaitingTime >= 60;
+            LessThenHour = fullWaitingTime < 60;
+
+            countOfHours = fullWaitingTime / 60;
+            countOfMinutes = (fullWaitingTime % 60) * Convert.ToInt32(MoreThenHour)
+                + (fullWaitingTime * Convert.ToInt32(LessThenHour));
+
+            Console.WriteLine("Вам придется отстоять в очереди " + countOfHours 
+                + " и " + countOfMinutes + " минут.");
+[EndCode]
