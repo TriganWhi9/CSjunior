@@ -1,0 +1,17 @@
+[StartCode]
+            int money;
+            int crystalCount;
+            int crystalPrice = 55;
+
+            Console.WriteLine("Добро пожаловать в лавку кристаллов! Цена за один "
+                + crystalPrice + " монет.");
+            Console.Write("Сколько у вас монет: ");
+            money = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Сколько кристаллов вам нужно: ");
+            crystalCount = Convert.ToInt32(Console.ReadLine()); 
+
+            money -= crystalPrice * crystalCount;
+
+            Console.WriteLine("Вы купили " + crystalCount
+                + " едениц кристаллов. У вас осталось " + money + "монет.");
+[EndCode]
