@@ -1,0 +1,21 @@
+[StartCode]
+            string name;
+            int age;
+            double height;
+            float weight;
+            double bodyMassIndex;
+
+            Console.Write("Ваше имя: ");
+            name = Console.ReadLine();
+            Console.Write("Ваш возраст: ");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ваш рост в сантиметрах: ");
+            height = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ваше вес: ");
+            weight = Convert.ToInt32(Console.ReadLine());
+
+            bodyMassIndex = weight / Math.Pow(height / 100, 2);
+
+            Console.WriteLine($"Вас зовут {name}, вам {age} год, ваш рост {height}, вес {weight}. " +
+                $"Ваш индекс массы тела {Convert.ToInt32(bodyMassIndex)} кг/м2.");
+[EndCode]
