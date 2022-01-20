@@ -1,0 +1,26 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int compliments;
+
+            Console.Write("Введите количество комплиментов, необходимых вам в этот тяжёлый день: ");
+            compliments = Convert.ToInt32(Console.ReadLine());
+
+            while (compliments-- > 0)
+            {
+                Console.WriteLine("Ты красивый, умный и трудолюбивый! У тебя все получится!");
+            }
+        }
+    }
+}
+[EndCode]
