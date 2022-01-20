@@ -1,4 +1,16 @@
 [StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C.JunОП_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
             byte age = 23; 
             ushort hours = 10000;
             int variable1 = -5;
@@ -11,5 +23,14 @@
             char questionMark = '?';
             string name = "Иван";
             string surname = "Грозный";
-            bool lightsOn = true;
+
+            bool isDoorOpen = true;
+            bool hasArmor = true;
+            bool containsObject = false;
+            bool shouldPay = false;
+            bool isSwithEnabled = true;
+        }
+    }
+}
+
 [EndCode]
