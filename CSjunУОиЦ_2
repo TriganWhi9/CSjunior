@@ -1,0 +1,44 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string haikuPhrase;
+            string haikuPhraseVariable;
+            string exitPhrase = "exit";
+
+            Console.Write("Приветсвую вас в программе написания хокку!" 
+                + "\nПо просьбе пользователей добавлена возможность создания хокку любой длины!"
+                + "\nДля завершения программы и выведения вашего хокку введите: exit"
+                + "\nВведите первую строку: ");
+
+            haikuPhrase = Console.ReadLine();
+            haikuPhraseVariable = haikuPhrase;
+
+            while (exitPhrase != haikuPhraseVariable)
+            {
+                Console.Write("Введите следующую строку или завершите программу: ");
+                haikuPhraseVariable = Console.ReadLine();
+                
+                if (exitPhrase == haikuPhraseVariable)
+                {
+                    Console.WriteLine("Ваше хокку готово: \n" + haikuPhrase);
+                }
+                else
+                {
+                    haikuPhrase = haikuPhrase + " \n" + haikuPhraseVariable;
+                }
+            }
+        }
+    }
+}
+
+[EndCode]
