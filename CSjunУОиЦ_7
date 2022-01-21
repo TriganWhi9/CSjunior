@@ -1,0 +1,42 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int tryCount = 3;
+            string password = "ЯЮниор";
+            string userInput;
+
+            for (int i = tryCount; i != 0 ; i--)
+            {
+                Console.Write("Введите пароль: ");
+                userInput = Console.ReadLine();
+                tryCount--;
+
+                if (userInput == password)
+                {
+                    Console.WriteLine("Вам доступны новые секретные курсы");
+                    break;
+                }
+                else if (tryCount > 0 )
+                {
+                    Console.WriteLine("У вас осталось " + (tryCount) + " попыток.");
+                }
+                else
+                {
+                    Console.WriteLine("У вас не осталось попыток. Доступ запрещен.");
+                }
+            }
+        }
+    }
+}
+
+[EndCode]
