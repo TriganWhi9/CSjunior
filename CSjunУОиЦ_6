@@ -1,0 +1,39 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string name, sign, frameString, middleString;
+
+            Console.Write("Введите имя: ");
+            name = Console.ReadLine();
+            Console.Write("Введите символ: ");
+            sign = Console.ReadLine();
+
+            frameString = sign;
+            middleString = sign + " " + name + " " + sign;
+
+            for (int i = 0; i <= middleString.Length; i++)
+            {
+                if (frameString.Length == middleString.Length)
+                {
+                    Console.WriteLine(frameString + "\n" + middleString + "\n" + frameString);
+                    break;
+                }
+
+                frameString += sign;
+
+            }
+        }
+    }
+}
+
+[EndCode]
