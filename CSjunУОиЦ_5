@@ -1,0 +1,28 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 7; i <= 98; i+= 7) 
+            {
+                Console.WriteLine(i);
+            }
+
+            //  У цикла For в отличии от цикла While есть четко заданное 
+            // начало, заданный конец и шаг хода.
+            //  Так как последовательность в задании представленна не в абстрактном виде
+            // и нам не нужно выводить от и/или до , заранее незаданного, N-го элемента, 
+            // то цикл For подходит здесь лучше чем While.
+        }
+    }
+}
+
+[EndCode]
