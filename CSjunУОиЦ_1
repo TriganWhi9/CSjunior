@@ -24,7 +24,6 @@ namespace CSjunУОиЦ_1
             {
                 Console.WriteLine(messege);
             }
-            Console.ReadKey();
         }
     }
 }
