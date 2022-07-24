@@ -11,9 +11,11 @@ namespace CSjunУОиЦ_3
     {
         static void Main(string[] args)
         {
-            int rubToUsd = 77, rubToUah = 3, usdToRub = 79, usdToUah = 31, uahToRub = 4, uahToUsd = 29;
+            float rubToUsd = 1 / 57f, rubToUah = 1 / 2f, 
+                usdToRub = 57, usdToUah = 36, 
+                uahToRub = 2, uahToUsd = 1 / 36f;
             float rub, usd, uah;
-            int userInput;
+            string userInput = "someStrig";
             float currencyCount;
 
             Console.WriteLine("Добро пожаловать в обменник! "
@@ -26,22 +28,32 @@ namespace CSjunУОиЦ_3
             Console.Write("Введите баланс гривен: ");
             uah = Convert.ToSingle(Console.ReadLine());
 
-            Console.WriteLine("\n0 - завершить обмен." 
-                + "\n 1 - обменять рубли на доллары." 
-                + "\n 2 - обменять рубли на гривны." 
-                + "\n 3 - обменять доллары на рубли."
-                + "\n 4 - обменять доллары на гривны."
-                + "\n 5 - обменять гривны на рубли."
-                + "\n 6 - обменять гривны на доллары.");
-
-            Console.Write("Введите команду: ");
-            userInput = Convert.ToInt32(Console.ReadLine());
-
-            while (userInput > 0)
+            while (userInput != "0")
             {
+
+                Console.WriteLine("\nВаш баланс: "
+                + rub + " - рублей, "
+                + usd + " - долларов, "
+                + uah + " - гривен.");
+
+                Console.WriteLine("\n0 - завершить обмен."
+                    + "\n 1 - обменять рубли на доллары."
+                    + "\n 2 - обменять рубли на гривны."
+                    + "\n 3 - обменять доллары на рубли."
+                    + "\n 4 - обменять доллары на гривны."
+                    + "\n 5 - обменять гривны на рубли."
+                    + "\n 6 - обменять гривны на доллары.");
+
+                Console.Write("Введите команду: ");
+                userInput = Console.ReadLine();
+
                 switch (userInput)
                 {
-                    case 1:
+
+                    case "0":
+                        Console.WriteLine("\nВсего доброго! Приходите еще. ");
+                        break;
+                    case "1":
                         Console.WriteLine("\nОбмен рублей на доллары. ");
                         Console.Write("Сколько рублей хотите обменять: ");
                         currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -49,19 +61,14 @@ namespace CSjunУОиЦ_3
                         if (rub > currencyCount)
                         {
                             rub -= currencyCount;
-                            usd += currencyCount / rubToUsd;
-
-                            Console.WriteLine("Ваш баланс: "
-                                + rub + " - рублей, "
-                                + usd + " - долларов, "
-                                + uah + " - гривен.");
+                            usd += currencyCount * rubToUsd;
                         }
                         else
                         {
                             Console.WriteLine("Недопустимое колличество рублей.");
                         }
                         break;
-                    case 2:
+                    case "2":
                         Console.WriteLine("\nОбмен рублей на гривны. ");
                         Console.Write("Сколько рублей хотите обменять: ");
                         currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -69,19 +76,14 @@ namespace CSjunУОиЦ_3
                         if (rub > currencyCount)
                         {
                             rub -= currencyCount;
-                            uah += currencyCount / rubToUah;
-
-                            Console.WriteLine("Ваш баланс: "
-                                + rub + " - рублей, "
-                                + usd + " - долларов, "
-                                + uah + " - гривен.");
+                            uah += currencyCount * rubToUah;
                         }
                         else
                         {
                             Console.WriteLine("Недопустимое колличество рублей.");
                         }
                         break;
-                    case 3:
+                    case "3":
                         Console.WriteLine("\nОбмен долларов на рубли. ");
                         Console.Write("Сколько долларов хотите обменять: ");
                         currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -90,18 +92,13 @@ namespace CSjunУОиЦ_3
                         {
                             usd -= currencyCount;
                             rub += currencyCount * usdToRub;
-
-                            Console.WriteLine("Ваш баланс: "
-                                + rub + " - рублей, "
-                                + usd + " - долларов, "
-                                + uah + " - гривен.");
                         }
                         else
                         {
                             Console.WriteLine("Недопустимое колличество долларов.");
                         }
                         break;
-                    case 4:
+                    case "4":
                         Console.WriteLine("\nОбмен долларов на гривны. ");
                         Console.Write("Сколько долларов хотите обменять: ");
                         currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -110,18 +107,13 @@ namespace CSjunУОиЦ_3
                         {
                             usd -= currencyCount;
                             uah += currencyCount * usdToUah;
-
-                            Console.WriteLine("Ваш баланс: "
-                                + rub + " - рублей, "
-                                + usd + " - долларов, "
-                                + uah + " - гривен.");
                         }
                         else
                         {
                             Console.WriteLine("Недопустимое колличество долларов.");
                         }
                         break;
-                    case 5:
+                    case "5":
                         Console.WriteLine("\nОбмен гривны на рубли. ");
                         Console.Write("Сколько гривен хотите обменять: ");
                         currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -130,18 +122,13 @@ namespace CSjunУОиЦ_3
                         {
                             uah -= currencyCount;
                             rub += currencyCount * uahToRub;
-
-                            Console.WriteLine("Ваш баланс: "
-                                + rub + " - рублей, "
-                                + usd + " - долларов, "
-                                + uah + " - гривен.");
                         }
                         else
                         {
                             Console.WriteLine("Недопустимое колличество гривен.");
                         }
                         break;
-                    case 6:
+                    case "6":
                         Console.WriteLine("\nОбмен гривны на доллары. ");
                         Console.Write("Сколько гривен хотите обменять: ");
                         currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -149,38 +136,20 @@ namespace CSjunУОиЦ_3
                         if (uah > currencyCount)
                         {
                             uah -= currencyCount;
-                            usd += currencyCount / uahToUsd;
-
-                            Console.WriteLine("Ваш баланс: "
-                                + rub + " - рублей, "
-                                + usd + " - долларов, "
-                                + uah + " - гривен.");
+                            usd += currencyCount * uahToUsd;
                         }
                         else
                         {
                             Console.WriteLine("Недопустимое колличество гривен.");
                         }
                         break;
+                    default:
+                        Console.WriteLine("\nНедопустимая команда! " +
+                            "\nВведите команду из списка.");
+                        break;
 
                 }
-
-                Console.WriteLine("\nДля продолжения введите команду: "
-                    + "\n 0 - завершить обмен."
-                    + "\n 1 - обменять рубли на доллары."
-                    + "\n 2 - обменять рубли на гривны."
-                    + "\n 3 - обменять доллары на рубли."
-                    + "\n 4 - обменять доллары на гривны."
-                    + "\n 5 - обменять гривны на рубли."
-                    + "\n 6 - обменять гривны на доллары.");
-                Console.Write("Ввод команды: ");
-                userInput = Convert.ToInt32(Console.ReadLine());
-
             }
-
-            Console.WriteLine("\nВаш окночательный баланс: " 
-                + rub + " - рублей, " 
-                + usd + " - долларов, " 
-                + uah + " - гривен.");
         }
     }
 }
