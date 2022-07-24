@@ -1,0 +1,34 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunОп_7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = "Белянов";
+            string surname = "Даниил";
+            string variable;
+
+            Console.WriteLine("До перестановки:" 
+                + "\nИмя - " + name 
+                + "\nФамилия - " + surname);
+
+            variable = name;
+            name = surname;
+            surname = variable;
+
+            Console.WriteLine("\nПосле перестановки:"
+                + "\nИмя - " + name
+                + "\nФамилия - " + surname);
+
+        }
+    }
+}
+
+[EndCode]
