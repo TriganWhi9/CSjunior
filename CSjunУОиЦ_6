@@ -18,20 +18,15 @@ namespace CSjunУОиЦ_6
             Console.Write("Введите символ: ");
             sign = Console.ReadLine();
 
-            frameString = sign;
+            frameString = "";
             middleString = sign + " " + name + " " + sign;
 
-            for (int i = 0; i <= middleString.Length; i++)
-            {
-                if (frameString.Length == middleString.Length)
-                {
-                    Console.WriteLine(frameString + "\n" + middleString + "\n" + frameString);
-                    break;
-                }
-
+            for (int i = 0; i != middleString.Length; i++)
+            {  
                 frameString += sign;
-
             }
+
+            Console.WriteLine(frameString + "\n" + middleString + "\n" + frameString);
         }
     }
 }
