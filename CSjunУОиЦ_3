@@ -14,7 +14,9 @@ namespace CSjunУОиЦ_3
             float rubToUsd = 1 / 57f, rubToUah = 1 / 2f, 
                 usdToRub = 57, usdToUah = 36, 
                 uahToRub = 2, uahToUsd = 1 / 36f;
-            float rub, usd, uah;
+            float rub;
+            float usd;
+            float uah;
             string userInput = "someStrig";
             float currencyCount;
 
