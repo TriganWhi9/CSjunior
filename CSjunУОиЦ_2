@@ -30,7 +30,7 @@ namespace CSjunУОиЦ_2
                 
                 if (exitPhrase == haikuPhraseVariable)
                 {
-                    Console.WriteLine("Ваше хокку готово: \n" + haikuPhrase);
+                    Console.WriteLine("\nВаше хокку готово: \n" + haikuPhrase);
                 }
                 else
                 {
