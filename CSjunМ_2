@@ -1,0 +1,74 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunМ_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] numericArray = {
+                { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+                { 2, 3, 4, 5, 6, 7, 8, 9, 10, 9 },
+                { 3, 4, 5, 6, 7, 8, 9, 10, 9, 8 },
+                { 4, 5, 6, 7, 8, 9, 10, 9, 8, 7 },
+                { 5, 6, 7, 8, 9, 10, 9, 8, 7, 6 },
+                { 6, 7, 8, 9, 10, 9, 8, 7, 6, 5 },
+                { 7, 8, 9, 10, 9, 8, 7, 6, 5, 4 },
+                { 8, 9, 10, 9, 8, 7, 6, 5, 4, 3 },
+                { 9, 10, 9, 8, 7, 6 ,5, 4, 3, 2 },
+                { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 }};
+
+            int maxElement = int.MinValue;
+
+            Console.WriteLine("Исходная матрица:");
+            for (int i = 0; i < numericArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < numericArray.GetLength(1); j++)
+                {
+                    Console.Write(numericArray[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i < numericArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < numericArray.GetLength(1); j++)
+                {
+                    if (maxElement < numericArray[i, j])
+                    {
+                        maxElement = numericArray[i, j];
+                    }
+                }
+            }
+
+            for (int i = 0; i < numericArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < numericArray.GetLength(1); j++)
+                {
+                    if (maxElement == numericArray[i, j])
+                    {
+                        numericArray[i, j] = 0;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nНаибольший элемент - " + maxElement + 
+                "\n\nПолученная матрица:");
+            for (int i = 0; i < numericArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < numericArray.GetLength(1); j++)
+                {
+                    Console.Write(numericArray[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+[EndCode]
