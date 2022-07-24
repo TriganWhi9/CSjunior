@@ -11,16 +11,22 @@ namespace CSjunУОиЦ_1
     {
         static void Main(string[] args)
         {
-            int compliments;
+            int messegesCount;
+            string messege;
 
-            Console.Write("Введите количество комплиментов, необходимых вам в этот тяжёлый день: ");
-            compliments = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите сообщение:");
+            messege = Console.ReadLine();   
 
-            while (compliments-- > 0)
+            Console.Write("Введите желаемое количество сообщений для вывода на экран: ");
+            messegesCount = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < messegesCount; i++)
             {
-                Console.WriteLine("Ты красивый, умный и трудолюбивый! У тебя все получится!");
+                Console.WriteLine(messege);
             }
+            Console.ReadKey();
         }
     }
 }
+
 [EndCode]
