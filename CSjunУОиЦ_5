@@ -11,7 +11,13 @@ namespace CSjunУОиЦ_5
     {
         static void Main(string[] args)
         {
-            for (int i = 7; i <= 98; i+= 7) 
+            int firstNedeedMemberOfTheSequence = 5;
+            int lastNedeedMemberOfTheSequence = 96;
+            int strokeStepOfTheSequence = 7;
+
+            for (int i = firstNedeedMemberOfTheSequence;
+                     i <= lastNedeedMemberOfTheSequence;
+                     i+= strokeStepOfTheSequence) 
             {
                 Console.WriteLine(i);
             }
