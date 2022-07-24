@@ -1,0 +1,46 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunМ_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] numericArray = { 
+                { 1, 2, 3 }, 
+                { 2, 3, 4 }, 
+                { 3, 4, 5} };
+
+            int line = 1, column = 0, lineSum = 0, columnProduct = 1;
+
+            for (int i = 0; i < numericArray.GetLength(0); i++)
+            {
+                
+                lineSum += numericArray[i, line];
+            }
+            for (int j = 0; j < numericArray.GetLength(1); j++)
+            {
+
+                columnProduct *= numericArray[column, j];
+            }
+            Console.WriteLine("Сумма " + (line + 1) + " строки равна - " + lineSum + 
+                "\nПроизведение " + (column + 1) + " столбца равна - " + columnProduct + 
+                "\nИсходная матрица:");
+            for (int i = 0; i < numericArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < numericArray.GetLength(1); j++)
+                {
+                    Console.Write(numericArray[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+[EndCode]
