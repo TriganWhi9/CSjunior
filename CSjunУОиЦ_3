@@ -11,9 +11,12 @@ namespace CSjunУОиЦ_3
     {
         static void Main(string[] args)
         {
-            float rubToUsd = 1 / 57f, rubToUah = 1 / 2f, 
-                usdToRub = 57, usdToUah = 36, 
-                uahToRub = 2, uahToUsd = 1 / 36f;
+            float rubToUsd = 1 / 57f; 
+            float rubToUah = 1 / 2f; 
+            float usdToRub = 57; 
+            float usdToUah = 36; 
+            float uahToRub = 2; 
+            float uahToUsd = 1 / 36f;
             float rub;
             float usd;
             float uah;
