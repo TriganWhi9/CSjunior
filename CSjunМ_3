@@ -11,35 +11,37 @@ namespace CSjunМ_3
     {
         static void Main(string[] args)
         {
-            int[] vs = { 
+            int[] linearArray = { 
                 42, 2, 3, 4, 5, 6, 7, 8, 9, 0,
                 88, -1, -7, -23, -14, 1, 8, 9, 60, 77, 90, 
-                7, 9, 8, 96 , 54, 66, 88, 44, 65, 55};
-
-            int firstElement = 0, lastElement = vs.Length - 1;
-
+                7, 9, 8, 96 , 54, 66, 88, 44, 55, 75};
+            int firstElement = 0;
+            int lastElement = linearArray.Length - 1;
             Console.WriteLine("Исходный одномерный массив:");
-            for (int i = 0; i < vs.Length; i++)
+
+            for (int i = 0; i < linearArray.Length; i++)
             {
-                Console.Write(vs[i] + "|");
+                Console.Write(linearArray[i] + "|");
             }
 
             Console.Write("\nЛокальные максимумы: ");
-            for (int i = 0; i < vs.Length; i++)
+
+            if (linearArray[firstElement] > linearArray[firstElement + 1])
             {
-                if (i == firstElement && vs[firstElement] > vs[firstElement + 1])
+                Console.Write(linearArray[firstElement]);
+            }
+            for (int i = firstElement + 1; i < lastElement; i++)
+            {
+                 if (linearArray[i - 1] < linearArray[i] && linearArray[i] > linearArray[i + 1])
                 {
-                    Console.Write(vs[i]);
-                }
-                else if (i == lastElement && vs[lastElement] > vs[lastElement - 1])
-                {
-                    Console.Write(", " + vs[i]);
-                }
-                else if (vs[i - 1] < vs[i] && vs[i] > vs[i + 1])
-                {
-                    Console.Write(", " + vs[i]);
+                    Console.Write(", " + linearArray[i]);
                 }
             }
+            if (linearArray[lastElement] > linearArray[lastElement - 1])
+            {
+                Console.Write(", " + linearArray[lastElement]);
+            }
+
             Console.WriteLine();
         }
     }
