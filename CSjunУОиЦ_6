@@ -11,7 +11,10 @@ namespace CSjunУОиЦ_6
     {
         static void Main(string[] args)
         {
-            string name, sign, frameString, middleString;
+            string name;
+            string sign;
+            string frameString;
+            string middleString;
 
             Console.Write("Введите имя: ");
             name = Console.ReadLine();
