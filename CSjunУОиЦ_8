@@ -12,23 +12,33 @@ namespace CSjunУОиЦ_8
         static void Main(string[] args)
         {
             Random random = new Random();
-            int number = random.Next(0, 101);
+            int minBoundOfPositiveNumbers = 0;
+            int maxBoundOfPositiveNumbers = 101;
+            int numberN = random.Next(minBoundOfPositiveNumbers, maxBoundOfPositiveNumbers);
             int sum = 0;
-            int multiplicityOfThreeMeasure = 3;
-            int multiplicityOfFiveMeasure = 5;
+            int firstSpecifiedNumber;
+            int secondSpecifiedNumber;
 
-            Console.WriteLine("Сгенерированное число: " + number);
-            Console.WriteLine("Числа кратные 3 и 5, но меньше " + number + ":");
+            Console.WriteLine("Укажите два числа " +
+                "на кратность к которым будут проверятся числа " +
+                "в отрезке положительных чисел от " + minBoundOfPositiveNumbers + " до " + numberN + " включительно.");
+            Console.Write("Первое число: ");
+            firstSpecifiedNumber = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Второе число: ");
+            secondSpecifiedNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Сгенерированное число: " + numberN);
+            Console.WriteLine("Числа кратные " + firstSpecifiedNumber + " и " + secondSpecifiedNumber + ", но меньше либо равные " + numberN + ":");
 
-            for (int i = multiplicityOfThreeMeasure; i < number; i++)
+            for (int i = firstSpecifiedNumber; i <= numberN; i++)
             {
-                if (0 == i % multiplicityOfThreeMeasure || 0 == i % multiplicityOfFiveMeasure)
+                if (0 == i % firstSpecifiedNumber || 0 == i % secondSpecifiedNumber)
                 {
                     Console.Write("|" + i);
                     sum += i;
                 }
             }
-            Console.WriteLine("\nСумма чисел кратных 3 и 5, но меньше " + number + " равно:" + sum);
+
+            Console.WriteLine("\nСумма чисел кратных " + firstSpecifiedNumber + " и " + secondSpecifiedNumber + ", но меньше либо равные " + numberN + " равно:" + sum);
         }
     }
 }
