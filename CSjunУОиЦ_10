@@ -1,0 +1,35 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int minSpecifiedNumber = 0;
+            int maxSpecifiedNumber = int.MaxValue;
+            int specifiedNumber = random.Next(minSpecifiedNumber, maxSpecifiedNumber);
+            int number = 2;
+            int powerOfNumber = 0;
+            int numberInPower = 1;
+
+            while (numberInPower <= specifiedNumber)
+            {
+                numberInPower = numberInPower * number;
+                powerOfNumber++;
+            }
+
+            Console.WriteLine("Заданное число - " + specifiedNumber 
+                + "\nМинимальная степень двойки, превосходящая заданное число - " + powerOfNumber 
+                + "\nЧисло в найденной степени - " + numberInPower);
+        }
+    }
+}
+
+[EndCode]
