@@ -16,13 +16,13 @@ namespace CSjunУОиЦ_8
             int maxBoundOfPositiveNumbers = 101;
             int numberN = random.Next(minBoundOfPositiveNumbers, maxBoundOfPositiveNumbers);
             int sum = 0;
-            int firstSpecifiedNumber = 3;
-            int secondSpecifiedNumber = 5;
+            int firstSpecifiedNumber = 5;
+            int secondSpecifiedNumber = 3;
 
             Console.WriteLine("Сгенерированное число: " + numberN);
             Console.WriteLine("Числа кратные " + firstSpecifiedNumber + " и " + secondSpecifiedNumber + ", но меньше либо равные " + numberN + ":");
 
-            for (int i = firstSpecifiedNumber; i <= numberN; i++)
+            for (int i = 0; i <= numberN; i++)
             {
                 if (0 == i % firstSpecifiedNumber || 0 == i % secondSpecifiedNumber)
                 {
