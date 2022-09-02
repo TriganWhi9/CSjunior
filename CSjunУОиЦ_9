@@ -14,25 +14,23 @@ namespace CSjunУОиЦ_9
             Random random = new Random();
             int minN = 1;
             int maxN = 27;
-            int numberN = random.Next(minN, maxN+1); // 100 -> 999
-            int varNumberN = numberN;
-            int minLimitOfThreedigitNumbers = 100;
-            int maxLimitOfThreedigitNumbers = 999;
+            int numberN = random.Next(minN, maxN+1);
+            int minLimitOfNumbers = 100;
+            int maxLimitOfNumbers = 999;
             int count = 0;
             
             Console.WriteLine("Заданное число - "+ numberN);
 
-            while (varNumberN <= maxLimitOfThreedigitNumbers)
+            for (int i = 0; i <= maxLimitOfNumbers; i = i + numberN)
             {
-                if (varNumberN >= minLimitOfThreedigitNumbers)
+                if (i >= minLimitOfNumbers)
                 {
                     count++;
                 }
-                varNumberN = varNumberN + numberN;
             }
 
-            Console.WriteLine("Количество чисел кратных " + numberN + " от " + minLimitOfThreedigitNumbers
-                + " до " + maxLimitOfThreedigitNumbers + " равны: " +  count);
+            Console.WriteLine("Количество чисел кратных " + numberN + " от " + minLimitOfNumbers
+                + " до " + maxLimitOfNumbers + " равны: " +  count);
         }
     }
 }
