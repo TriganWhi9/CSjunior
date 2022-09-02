@@ -1,0 +1,40 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int minN = 1;
+            int maxN = 27;
+            int numberN = random.Next(minN, maxN+1); // 100 -> 999
+            int varNumberN = numberN;
+            int minLimitOfThreedigitNumbers = 100;
+            int maxLimitOfThreedigitNumbers = 999;
+            int count = 0;
+            
+            Console.WriteLine("Заданное число - "+ numberN);
+
+            while (varNumberN <= maxLimitOfThreedigitNumbers)
+            {
+                if (varNumberN >= minLimitOfThreedigitNumbers)
+                {
+                    count++;
+                }
+                varNumberN = varNumberN + numberN;
+            }
+
+            Console.WriteLine("Количество чисел кратных " + numberN + " от " + minLimitOfThreedigitNumbers
+                + " до " + maxLimitOfThreedigitNumbers + " равны: " +  count);
+        }
+    }
+}
+
+[EndCode]
