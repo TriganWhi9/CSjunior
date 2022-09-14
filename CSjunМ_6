@@ -1,0 +1,62 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunМ_6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numericArray = { 44, 53, 33, 40, 95, 68, 82, 36, 51, 30 };
+            int arrayMemberComparisonCount = 0;
+            int arrayMemberVar;
+            bool arrayIsSorted = false;
+
+            Console.Write("Данн массив: \n|");
+
+            for (int i = 0; i < numericArray.Length; i++)
+            {
+                Console.Write(numericArray[i] + "|");
+            }
+
+            Console.Write("\nЧисла отсортированные по возрастанию: \n|");
+
+            while (arrayIsSorted == false)
+            {
+                for (int i = 0; i < numericArray.Length - 1; i++)
+                {
+                    if (numericArray[i] < numericArray[i + 1])
+                    {
+                        arrayMemberComparisonCount++;
+                    }
+                    if (numericArray[i] > numericArray[i + 1])
+                    {
+                        arrayMemberVar = numericArray[i + 1];
+                        numericArray[i + 1] = numericArray[i];
+                        numericArray[i] = arrayMemberVar;
+                    }
+                }
+
+                if (arrayMemberComparisonCount == numericArray.Length - 1)
+                {
+                    arrayIsSorted = true;
+                }
+
+                arrayMemberComparisonCount = 0;
+            }
+
+            for (int i = 0; i < numericArray.Length; i++)
+            {
+                Console.Write(numericArray[i] + "|");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
+
+[EndCode]
