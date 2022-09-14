@@ -1,0 +1,29 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunМ_7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string haiku = "Ясная луна." +
+                "У пруда всю ночь напролет " +
+                "брожу, любуясь...";
+            char[] separators = new char[] { ' ', '.', ',' }; 
+
+            string[] haikuPhrases = haiku.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var phrase in haikuPhrases)
+            {
+                Console.WriteLine($"Substring: {phrase}");
+            }
+        }
+    }
+}
+
+[EndCode]
