@@ -1,0 +1,52 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunМ_8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+            int swithingArrayMember = 0;
+            int userInput;
+
+            Console.Write("Данный массив: \n|");
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + "|");
+            }
+
+            Console.Write("\nВведите количество элементов для смещения: ");
+            userInput = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < userInput; i++)
+            {
+                swithingArrayMember = array[0];
+
+                for (int j = 0; j < array.Length - 1; j++)
+                {
+                    array[j] = array[j + 1];
+                }
+                
+                array[array.Length - 1] = swithingArrayMember;
+            }
+
+            Console.Write("\nМассив смещенный на " + userInput + " элементов влево: \n|");
+
+            for (int i = 0;i < array.Length; i++)
+            {
+                Console.Write(array[i] + "|");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
+
+[EndCode]
