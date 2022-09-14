@@ -1,0 +1,69 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunУОиЦ_11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string bracketsLine;
+            char initialBracket = '('; 
+            char closingBracket = ')'; 
+            double stringLengthParityMarker = -1;
+            int nestingLevelMax = 1;
+            int nestingLevelVar = 0;
+            int initialBracketCount = 0;
+            int closingBracketCount = 0;
+            bool bracketedExpressionCorrectlyComposed = true;
+
+            Console.WriteLine("Введите скобочное выражение:");
+            bracketsLine = Console.ReadLine();
+
+            stringLengthParityMarker = Math.Pow(stringLengthParityMarker, bracketsLine.Length);
+
+            if (bracketsLine[0] == closingBracket || stringLengthParityMarker == -1)
+            {
+                Console.WriteLine("Скобочное выражение составленно неверно!");
+            }
+            else
+            {
+                for (int i = 0; i < bracketsLine.Length; i++)
+                {
+                    if (nestingLevelVar < 0)
+                    {
+                        bracketedExpressionCorrectlyComposed = false;
+                    }
+                    else if (bracketsLine[i] == initialBracket)
+                    {
+                        nestingLevelVar++;
+                        initialBracketCount++;
+                        if (nestingLevelVar > nestingLevelMax)
+                        {
+                            nestingLevelMax = nestingLevelVar;
+                        }
+                    }
+                    else if (bracketsLine[i] == closingBracket)
+                    {
+                        nestingLevelVar--;
+                        closingBracketCount++;
+                    }
+                }
+                if (bracketedExpressionCorrectlyComposed == true || initialBracketCount == closingBracketCount)
+                {
+                    Console.WriteLine("Скобочное выражение сотавленно верно. Глубина вложенности - " + nestingLevelMax);
+                }
+                else
+                {
+                    Console.WriteLine("Скобочное выражение составленно неверно!");
+                }
+            }
+        }
+    }
+}
+
+[EndCode]
