@@ -1,0 +1,58 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunМ_4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            bool programmIsOn = true;
+            string userInput;
+            float[] numericArray = new float[1];
+            float[] expandingNumericArray = new float[numericArray.Length + 1];
+            float sum = 0;
+            
+            while (programmIsOn)
+            {
+                Console.Write("Список команд:" +
+                    "\n sum - просуммировать введенные числа" +
+                    "\n exit - выход из программы" +
+                    "\nВведите число или команду: ");
+                userInput = Console.ReadLine();
+                Console.Clear();
+
+                switch (userInput)
+                {
+                    case "sum":
+                        Console.WriteLine("Сумма введенных чисел равна - " + sum + "\n");
+                        break;
+                    case "exit":
+                        programmIsOn = false;
+                        break;
+                }
+                if (userInput != "sum" && userInput != "exit")
+                {
+                    for (int i = 0; i < numericArray.Length; i++)
+                    {
+                        expandingNumericArray[i] = numericArray[i];
+                    }
+
+                    expandingNumericArray[expandingNumericArray.Length - 1] = Convert.ToSingle(userInput);
+                    numericArray = expandingNumericArray;
+
+                    for (int i = 0; i < numericArray.Length; i++)
+                    {
+                        sum += numericArray[i];
+                    }
+                }
+            }
+        }
+    }
+}
+
+[EndCode]
