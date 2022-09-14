@@ -1,0 +1,46 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunМ_5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numericArray = { 
+            6, 8, 2, 4, 6, 6, 6, 2, 8, 8,
+            4, 4, 4, 4, 2, 8, 6, 2, 8, 4,
+            6, 8, 8, 6, 2, 4, 6, 6, 4, 4 };
+            int repetitionsCountVar = 1;
+            int repetitionsCountMax = 1;
+            int arrayMemberWithMaxRepetitions = 0;
+
+            Console.Write("Данный массив: \n|");
+            
+            for (int i = 0; i < numericArray.Length - 1; i++)
+            {
+                Console.Write(numericArray[i] + "|");
+
+                if (numericArray[i] == numericArray[i + 1])
+                {
+                    repetitionsCountVar++;
+
+                    if (repetitionsCountVar > repetitionsCountMax)
+                    {
+                        arrayMemberWithMaxRepetitions = numericArray[i];
+                        repetitionsCountMax = repetitionsCountVar;
+                        repetitionsCountVar = 1;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nЧисло " + arrayMemberWithMaxRepetitions + " повторяется большее число раз подряд. \nЧисло повторений - " + repetitionsCountMax);
+        }
+    }
+}
+
+[EndCode]
