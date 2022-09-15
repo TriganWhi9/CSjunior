@@ -1,0 +1,43 @@
+[StartCode]
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSjunФ_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string userInput;
+            bool userInputSuccessfullyConverted = false;
+
+            Console.WriteLine("Введите число в строку для его конвертации");
+
+            while (userInputSuccessfullyConverted == false)
+            {
+                userInput = Console.ReadLine();
+                ConvertToInt(userInput, ref userInputSuccessfullyConverted);
+            }
+        }
+
+        static void ConvertToInt(string numberInString, ref bool success)
+        {
+            int number;
+            success = int.TryParse(numberInString, out number);
+
+            if (success)
+            {
+                Console.WriteLine($"Строка - '{numberInString}' успешно сконвертированна в число - {number}.");
+            }
+            else
+            {
+                Console.WriteLine($"Попытка конвертации строки - '{numberInString}' в число провалилась. Попробуйте еще раз.");
+            }
+        }
+    }
+}
+
+[EndCode]
