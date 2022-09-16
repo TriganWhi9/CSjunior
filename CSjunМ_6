@@ -11,47 +11,41 @@ namespace CSjunМ_6
     {
         static void Main(string[] args)
         {
-            int[] numericArray = { 44, 53, 33, 40, 95, 68, 82, 36, 51, 30 };
-            int arrayMemberComparisonCount = 0;
-            int arrayMemberVar;
-            bool arrayIsSorted = false;
+            int[] numericalArray = { 44, 53, 33, 40, 95, 68, 82, 33, 51, 30 };
+            int arrayElementComparisonCounter = 0;
+            int arrayElementVar;
 
             Console.Write("Данн массив: \n|");
 
-            for (int i = 0; i < numericArray.Length; i++)
+            for (int i = 0; i < numericalArray.Length; i++)
             {
-                Console.Write(numericArray[i] + "|");
+                Console.Write(numericalArray[i] + "|");
             }
 
             Console.Write("\nЧисла отсортированные по возрастанию: \n|");
 
-            while (arrayIsSorted == false)
+            while (arrayElementComparisonCounter != numericalArray.Length - 1)
             {
-                for (int i = 0; i < numericArray.Length - 1; i++)
+                arrayElementComparisonCounter = 0;
+
+                for (int i = 0; i < numericalArray.Length - 1; i++)
                 {
-                    if (numericArray[i] < numericArray[i + 1])
+                    if (numericalArray[i] <= numericalArray[i + 1])
                     {
-                        arrayMemberComparisonCount++;
+                        arrayElementComparisonCounter++;
                     }
-                    if (numericArray[i] > numericArray[i + 1])
+                    else if (numericalArray[i] >= numericalArray[i + 1])
                     {
-                        arrayMemberVar = numericArray[i + 1];
-                        numericArray[i + 1] = numericArray[i];
-                        numericArray[i] = arrayMemberVar;
+                        arrayElementVar = numericalArray[i + 1];
+                        numericalArray[i + 1] = numericalArray[i];
+                        numericalArray[i] = arrayElementVar;
                     }
                 }
-
-                if (arrayMemberComparisonCount == numericArray.Length - 1)
-                {
-                    arrayIsSorted = true;
-                }
-
-                arrayMemberComparisonCount = 0;
             }
 
-            for (int i = 0; i < numericArray.Length; i++)
+            for (int i = 0; i < numericalArray.Length; i++)
             {
-                Console.Write(numericArray[i] + "|");
+                Console.Write(numericalArray[i] + "|");
             }
 
             Console.WriteLine();
