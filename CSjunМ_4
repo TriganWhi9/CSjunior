@@ -13,42 +13,47 @@ namespace CSjunМ_4
         {
             bool programmIsOn = true;
             string userInput;
+            string sumCommandMarker = "sum";
+            string exitCommandMarker = "exit";
             float[] numericArray = new float[1];
-            float[] expandingNumericArray = new float[numericArray.Length + 1];
+            float[] expandingNumericArray;
             float sum = 0;
             
             while (programmIsOn)
             {
                 Console.Write("Список команд:" +
-                    "\n sum - просуммировать введенные числа" +
-                    "\n exit - выход из программы" +
+                    $"\n {sumCommandMarker} - просуммировать введенные числа" +
+                    $"\n {exitCommandMarker} - выход из программы" +
                     "\nВведите число или команду: ");
                 userInput = Console.ReadLine();
                 Console.Clear();
 
                 switch (userInput)
                 {
-                    case "sum":
+                    case var input when input == sumCommandMarker:
+
+                        for (int i = 0; i < numericArray.Length; i++)
+                        {
+                            sum += numericArray[i];
+                        }
+
                         Console.WriteLine("Сумма введенных чисел равна - " + sum + "\n");
+                        sum = 0;
                         break;
-                    case "exit":
+                    case var input when input == exitCommandMarker:
                         programmIsOn = false;
                         break;
-                }
-                if (userInput != "sum" && userInput != "exit")
-                {
-                    for (int i = 0; i < numericArray.Length; i++)
-                    {
-                        expandingNumericArray[i] = numericArray[i];
-                    }
+                    default:
+                        expandingNumericArray = new float[numericArray.Length + 1];
 
-                    expandingNumericArray[expandingNumericArray.Length - 1] = Convert.ToSingle(userInput);
-                    numericArray = expandingNumericArray;
+                        for (int i = 0; i < numericArray.Length; i++)
+                        {
+                            expandingNumericArray[i] = numericArray[i];
+                        }
 
-                    for (int i = 0; i < numericArray.Length; i++)
-                    {
-                        sum += numericArray[i];
-                    }
+                        numericArray = expandingNumericArray;
+                        numericArray[numericArray.Length - 1] = Convert.ToSingle(userInput);
+                        break;
                 }
             }
         }
