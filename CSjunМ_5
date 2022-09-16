@@ -13,8 +13,8 @@ namespace CSjunМ_5
         {
             int[] numericArray = { 
             6, 8, 2, 4, 6, 6, 6, 2, 8, 8,
-            4, 4, 4, 4, 2, 8, 6, 2, 8, 4,
-            6, 8, 8, 6, 2, 4, 6, 6, 4, 4 };
+            4, 4, 4, 4, 6, 8, 6, 2, 8, 4,
+            6, 8, 4, 6, 2, 4, 6, 6, 4, 4 };
             int repetitionsCountVar = 1;
             int repetitionsCountMax = 1;
             int arrayMemberWithMaxRepetitions = 0;
@@ -33,8 +33,11 @@ namespace CSjunМ_5
                     {
                         arrayMemberWithMaxRepetitions = numericArray[i];
                         repetitionsCountMax = repetitionsCountVar;
-                        repetitionsCountVar = 1;
                     }
+                }
+                else
+                {
+                    repetitionsCountVar = 1;
                 }
             }
 
