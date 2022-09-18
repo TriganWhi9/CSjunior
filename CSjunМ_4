@@ -11,15 +11,15 @@ namespace CSjunМ_4
     {
         static void Main(string[] args)
         {
-            bool programmIsOn = true;
+            bool isProgrammOn = true;
             string userInput;
-            string sumCommandMarker = "sum";
-            string exitCommandMarker = "exit";
+            const string sumCommandMarker = "sum";
+            const string exitCommandMarker = "exit";
             float[] numericArray = new float[1];
             float[] expandingNumericArray;
             float sum = 0;
             
-            while (programmIsOn)
+            while (isProgrammOn)
             {
                 Console.Write("Список команд:" +
                     $"\n {sumCommandMarker} - просуммировать введенные числа" +
@@ -30,7 +30,7 @@ namespace CSjunМ_4
 
                 switch (userInput)
                 {
-                    case var input when input == sumCommandMarker:
+                    case sumCommandMarker:
 
                         for (int i = 0; i < numericArray.Length; i++)
                         {
@@ -40,8 +40,8 @@ namespace CSjunМ_4
                         Console.WriteLine("Сумма введенных чисел равна - " + sum + "\n");
                         sum = 0;
                         break;
-                    case var input when input == exitCommandMarker:
-                        programmIsOn = false;
+                    case exitCommandMarker:
+                        isProgrammOn = false;
                         break;
                     default:
                         expandingNumericArray = new float[numericArray.Length + 1];
