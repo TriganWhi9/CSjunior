@@ -11,31 +11,34 @@ namespace CSjunФ_3
     {
         static void Main(string[] args)
         {
-            string userInput;
-            bool userInputSuccessfullyConverted = false;
+            int number = 0;
+            Console.Write("Введите число в строку для его конвертации: ");
 
-            Console.WriteLine("Введите число в строку для его конвертации");
-
-            while (userInputSuccessfullyConverted == false)
-            {
-                userInput = Console.ReadLine();
-                ConvertToInt(userInput, ref userInputSuccessfullyConverted);
-            }
+            attemptToConvertToInt(number);
         }
 
-        static void ConvertToInt(string numberInString, ref bool success)
+        static int attemptToConvertToInt(int number)
         {
-            int number;
-            success = int.TryParse(numberInString, out number);
+            int sucssefulyConvertedNumber = 0;
+            string numberInString;
+            bool isStringSuccessfulyConverted = false;
 
-            if (success)
+            while (isStringSuccessfulyConverted == false)
             {
-                Console.WriteLine($"Строка - '{numberInString}' успешно сконвертированна в число - {number}.");
+                numberInString = Console.ReadLine();
+                isStringSuccessfulyConverted = int.TryParse(numberInString, out sucssefulyConvertedNumber);
+
+                if (isStringSuccessfulyConverted)
+                {
+                    Console.WriteLine($"Строка - '{numberInString}' успешно сконвертированна в число - {sucssefulyConvertedNumber}.");
+                }
+                else
+                {
+                    Console.WriteLine($"Попытка конвертации строки - '{numberInString}' в число провалилась. Попробуйте еще раз.");
+                }
             }
-            else
-            {
-                Console.WriteLine($"Попытка конвертации строки - '{numberInString}' в число провалилась. Попробуйте еще раз.");
-            }
+
+            return sucssefulyConvertedNumber;
         }
     }
 }
