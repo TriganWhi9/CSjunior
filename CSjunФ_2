@@ -15,32 +15,59 @@ namespace CSjunФ_2
             int maxHealth = 10;
             int mana = 5;
             int maxMana = 10;
-            string userInput;
+            string heathPercent = "0";
+            string manaPercent = "0";
+            bool isProgramOn = health > 0; ;
 
-            while(true)
+            while(isProgramOn)
             {
-                DrawBar(health, maxHealth, ConsoleColor.Red, 0, '$');
-                DrawBar(mana, maxMana, ConsoleColor.Blue, 1, '#');
-
-                Console.WriteLine("Введите число, на которое изменятся жизни:");
-                userInput = Console.ReadLine();
-                CalculateBarValue(ref health,userInput);
-                Console.WriteLine("Введите число, на которое изменятся мана:");
-                userInput = Console.ReadLine();
-                CalculateBarValue(ref mana, userInput);
-
+                DrawBar(heathPercent, health, maxHealth, ConsoleColor.Red, 0, '$');
+                DrawBar(manaPercent, mana, maxMana, ConsoleColor.Blue, 1, '#');
+                Console.Write("Как толлько жизни закончаться вы проиграете и программа завершит свое действие! " +
+                    "\nВведите число, на которое изменятся жизни: ");
+                heathPercent = Console.ReadLine();
+                Console.Write("Введите число, на которое изменятся мана: ");
+                manaPercent = Console.ReadLine();
+                Console.Write("Для продолжения введите любую клавишу");
+                Console.ReadKey();
                 Console.Clear();
             }
         }
 
-        static void DrawBar(int value, int maxValue, ConsoleColor color, int position, char symbol = ' ')
+        static void DrawBar(string valueModifaer, int value, int maxValue, ConsoleColor color, int position, char symbol = ' ')
         {
-            ConsoleColor defaultColor = Console.BackgroundColor;
+            string tempValueModifaer = "";
             string bar = "";
+            int scaleShareForOnePrcent = 10;
+
+            if (valueModifaer[valueModifaer.Length - 1] == '%')
+            {
+                for (int i = 0; i < valueModifaer.Length - 1; i++)
+                {
+                    tempValueModifaer += valueModifaer[i];
+                }
+
+                value += Convert.ToInt32(tempValueModifaer) / scaleShareForOnePrcent;
+                tempValueModifaer = "";
+            }
+            else
+            {
+                value += Convert.ToInt32(valueModifaer);
+            }
+
+            if (value < 0)
+            {
+                value = 0;
+            }
+
+            ConsoleColor defaultColor = Console.BackgroundColor;
 
             for (int i = 0; i < value; i++)
             {
-                bar += symbol;
+                if (i < maxValue)
+                {
+                    bar += symbol;
+                }
             }
 
             Console.SetCursorPosition(0,position);
@@ -55,28 +82,8 @@ namespace CSjunФ_2
             {
                 bar += ' ';
             }
+
             Console.WriteLine(bar + ']');
-        }
-
-        static int CalculateBarValue(ref int value, string valueModifaer)
-        {
-            string tempValueModifaer = "";
-
-            if (valueModifaer[valueModifaer.Length - 1] == '%')
-            {
-                for (int i = 0;i < valueModifaer.Length - 1;i++)
-                {
-                    tempValueModifaer += valueModifaer[i];
-                }
-
-                value += Convert.ToInt32(tempValueModifaer)/10;
-            }
-            else
-            {
-                value += Convert.ToInt32(valueModifaer);
-            }
-
-            return value;
         }
     }
 }
