@@ -11,48 +11,47 @@ namespace CSjunМ_4
     {
         static void Main(string[] args)
         {
+            const string SumCommandMarker = "sum";
+            const string ExitCommandMarker = "exit";
             bool isProgrammOn = true;
             string userInput;
-            const string sumCommandMarker = "sum";
-            const string exitCommandMarker = "exit";
-            float[] numericArray = new float[1];
-            float[] expandingNumericArray;
-            float sum = 0;
+            float[] numbers = new float[0];
             
             while (isProgrammOn)
             {
                 Console.Write("Список команд:" +
-                    $"\n {sumCommandMarker} - просуммировать введенные числа" +
-                    $"\n {exitCommandMarker} - выход из программы" +
+                    $"\n {SumCommandMarker} - просуммировать введенные числа" +
+                    $"\n {ExitCommandMarker} - выход из программы" +
                     "\nВведите число или команду: ");
                 userInput = Console.ReadLine();
                 Console.Clear();
 
                 switch (userInput)
                 {
-                    case sumCommandMarker:
+                    case SumCommandMarker:
+                        float sum = 0;
 
-                        for (int i = 0; i < numericArray.Length; i++)
+                        for (int i = 0; i < numbers.Length; i++)
                         {
-                            sum += numericArray[i];
+                            sum += numbers[i];
                         }
 
                         Console.WriteLine("Сумма введенных чисел равна - " + sum + "\n");
                         sum = 0;
                         break;
-                    case exitCommandMarker:
+                    case ExitCommandMarker:
                         isProgrammOn = false;
                         break;
                     default:
-                        expandingNumericArray = new float[numericArray.Length + 1];
+                        float[] expandingArray = new float[numbers.Length + 1];
 
-                        for (int i = 0; i < numericArray.Length; i++)
+                        for (int i = 0; i < numbers.Length; i++)
                         {
-                            expandingNumericArray[i] = numericArray[i];
+                            expandingArray[i] = numbers[i];
                         }
 
-                        numericArray = expandingNumericArray;
-                        numericArray[numericArray.Length - 1] = Convert.ToSingle(userInput);
+                        numbers = expandingArray;
+                        numbers[numbers.Length - 1] = Convert.ToSingle(userInput);
                         break;
                 }
             }
